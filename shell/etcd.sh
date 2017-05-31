@@ -6,3 +6,4 @@ etcdctl --endpoints http://127.0.0.1:2379  --user root:xxx role grant-permission
 etcdctl --user root:xxx role grant admin readwrite --prefix /pub/
 etcdctl --user root:xxx role revoke admin /pub/ /pub0 # 删除--prefix /pub/权限, revoke不支持--prefix参数
 etcdctl --user root:xxx user grant-role admin admin # 给用户分配角色
+etcdctl --user root:xxx user revoke-role userA roleA # 删除用户的角色
