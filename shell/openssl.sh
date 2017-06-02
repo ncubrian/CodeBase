@@ -7,3 +7,4 @@ openssl x509 -req -in ssl.csr -signkey ssl.key -out ssl.crt # 自签名私有证
 openssl x509 -in certificate.pem -text -noout # 查看证书
 openssl rsa -in mykey.key -text -noout # 查看key
 openssl req -noout -text -in my.csr # 查看证书签名请求
+openssl x509 -outform PEM -in ssl.crt -pubkey -out ssl.pubkey # 从证书中提取公钥
