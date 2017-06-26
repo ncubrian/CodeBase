@@ -6,6 +6,7 @@ cat /proc/cpuinfo
 cat /proc/version
 lsb_release -a #查看系统版本
 grep 'struct timespec' /usr/include/*.h #查看数据类型
+grep -E 'model|stepping' /proc/cpuinfo | sort -u
 ps -ef|grep nmon #查看进程
 du -sh ./* # 查看当前目录下所有文件和文件夹大小
 df -h # 查看磁盘空间
