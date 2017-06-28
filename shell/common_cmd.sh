@@ -35,6 +35,10 @@ hostname -b MONGO1 # 设置主机名
 # vi
 :%!xxd	   #查看HEX
 :%!xxd -r  #reverse上面的操作
+d3w        #删除到第三个单词的结尾位置
+d0         #删至行首
+d$         #删至行尾
+D          #删除到某一行的结尾
 
 rpm -qi glibc #查看glibc库的信息
 yum -y update glibc
