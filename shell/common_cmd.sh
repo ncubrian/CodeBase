@@ -18,6 +18,7 @@ tar -ztvf file.tar.gz
 tar -zcv --exclude='foo/bar/logs' -f foobar.tar.gz foobar
 tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 cut -f2 -d' ' # 取出空格分隔的第二个string
+go test -v -run TestLongLoop -timeout 30m # 指定go test执行时间最大为30分钟
 
 ntpdate pool.ntp.org # ubuntu手动时间同步
 date +%s.%N # seconds.nanoseconds since 1970-01-01 00:00:00 UTC e.g. 1490666011.288909555
