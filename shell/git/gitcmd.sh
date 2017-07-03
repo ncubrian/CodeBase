@@ -36,3 +36,34 @@ git diff dev master --stat # 查看dev和master分支之间改了哪些文件
 git reset HEAD -- foo.bar # 恢复被暂存了的文件
 git config --global core.excludesfile '~/.gitignore' #使全局gitignore生效
 git push origin --delete foobar # 删除远程分支
+
+----------------------------------------------------------------------------------------------------------
+# Git 全局设置
+
+git config --global user.name "foo"
+git config --global user.email "foo@bar"
+
+# 创建新版本库
+
+git clone git@github.com:foo/aaa.git
+cd aaa
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+# 已存在的文件夹
+
+cd existing_folder
+git init
+git remote add origin git@github.com:foo/aaa.git
+git add .
+git commit
+git push -u origin master
+
+# 已存在的 Git 版本库
+
+cd existing_repo
+git remote add origin git@github.com:foo/aaa.git
+git push -u origin --all
+git push -u origin --tags
