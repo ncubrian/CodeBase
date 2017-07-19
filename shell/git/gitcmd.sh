@@ -25,6 +25,8 @@ git branch --set-upstream-to=origin/foobar # 修改当前分支追踪的远程�
 git push origin :refs/tags/v0.9 #删除指定tag
 git branch -d xxx #删除本地xxx分支
 
+git reset --hard commit-hash # 回滚到之前某一commit
+
 使用Git比较本地分支版本和远程版本的不同之处
 假定远端库名为 origin, 你要比较的本地分支为 foo, 远端分支为 xxx
 # 获取远端库最新信息
