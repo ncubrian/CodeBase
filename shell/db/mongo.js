@@ -85,3 +85,4 @@ db.posts.find({post_text:{$regex:"runoob"}})
 db.posts.find({post_text:/runoob/})
 db.foo.find().sort({bar:-1}).limit(1) // 查出bar最大值
 db.foobar.deleteMany({"_id" : {$lt: ObjectId("5899EF000000000000000000")}}) // 删除0x5899EF00 之前的文档
+db['foo'].distinct('bar', {time:{$gte:'2006-01-02 15:04:05', $lte:'2007-05-04 15:02:01'}})
