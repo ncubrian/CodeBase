@@ -38,6 +38,7 @@ git diff dev master --stat # 查看dev和master分支之间改了哪些文件
 git reset HEAD -- foo.bar # 恢复被暂存了的文件
 git config --global core.excludesfile '~/.gitignore' #使全局gitignore生效
 git push origin --delete foobar # 删除远程分支
+git push origin --delete tag foobar # 删除远程tag
 
 ----------------------------------------------------------------------------------------------------------
 # Git 全局设置
