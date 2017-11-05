@@ -29,8 +29,13 @@ git reset --hard commit-hash # 回滚到之前某一commit
 
 使用Git比较本地分支版本和远程版本的不同之处
 假定远端库名为 origin, 你要比较的本地分支为 foo, 远端分支为 xxx
+
 # 获取远端库最新信息
 $ git fetch origin
+
+# commit visualization
+git log --graph --decorate --oneline
+
 # 做diff
 $ git diff foo origin/xxx
 git log dev..master # 查看master比dev多提交了什么
