@@ -17,6 +17,7 @@ lsof -p 507 # 查看某进程使用的端口
 tar -ztvf file.tar.gz
 tar -zcv --exclude='foo/bar/logs' -f foobar.tar.gz foobar
 tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
+tar xvzf openresty-1.11.2.5.tar.gz openresty-1.11.2.5/bundle/nginx-1.11.2 -C openresty-1.11.2.5/bundle/
 cut -f2 -d' ' # 取出空格分隔的第二个string
 go test -v -run TestLongLoop -timeout 30m # 指定go test执行时间最大为30分钟
 
