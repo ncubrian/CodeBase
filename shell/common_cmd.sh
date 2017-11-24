@@ -64,6 +64,7 @@ grep -o -w 'body:\[\w\{24\}\]' alipay.err # 输出一行中的body:[0-9a-zA-Z]
 sed -n 's/\(.*",\)\("foobar":"[0-9]*[0-9]"\)\(,".*\)/\2/p' # 输出一行中的","foobar":"123456","
 sed -i "/^`tail -n3 test.yml|head -n1`$/s/^/#/" test.yml # 在倒数第三行开头添加'#'
 sed -i "/^`tail -n1 test.yml|head -n1`$/s/^.//" test.yml # 删除倒数第一行开头的字符
+tr "\n" " " < foo.json | sed -e 's/ //g' # 去除json格式化
 # 正则表达式中，[]不需要转义，{}需要转义
 
 find . -name "*.go" | xargs grep -n "Config"
