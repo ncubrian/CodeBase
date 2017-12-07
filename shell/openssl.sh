@@ -4,6 +4,7 @@ openssl rsa -in ssl.key -pubout -out rsa_public_key.pem # 根据私钥生成公�
 openssl req -new -key ssl.key -out ssl.csr # 生成证书签名请求
 openssl x509 -req -in ssl.csr -signkey ssl.key -out ssl.crt # 自签名私有证书
 
+openssl dgst -sha256 -sign privkey -out after before # sign before using sha256 with rsa
 openssl rsa -pubin -in pubkey.pem -text -modulus # 查看公钥信息
 openssl x509 -in certificate.pem -text -noout # 查看证书
 openssl rsa -in mykey.key -text -noout # 查看key
