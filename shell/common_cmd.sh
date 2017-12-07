@@ -78,6 +78,7 @@ sort foobar | uniq -dc | sort -k 1nr # 按foobar第一列统计重复并降序�
 curl -i -X POST -H "'Content-type':'application/x-www-form-urlencoded', 'charset':'utf-8', 'Accept': 'text/plain'" -d 'json_data={"a":"aaa","b":"bbb","data":[{"c":"ccc","d":"ddd","keywords":[{"e": "eee", "f":"fff", "g":"ggg"}]}]}' url
 curl --data-urlencode "foobar=foo bar" http://localhost:port
 curl --data "foo=foo&bar=bar" http://localhost:port
+curl -H 'Content-type:text/xml' -d'' https://foobar -k # post发送xml，忽略证书
 
 cat /proc/sys/net/ipv4/tcp_max_tw_buckets # ubuntu TIME_WAIT最大数量
 vi /etc/sysctl.conf
