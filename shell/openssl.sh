@@ -1,5 +1,5 @@
 openssl genrsa -out ssl.key 2048 # 生成私钥
-openssl pkcs8 -topk8 -inform PEM -in pkcs1.pem -outform PEM –nocrypt -out pkcs8.pem # PKCS1转成PKCS8格式的私钥
+openssl pkcs8 -topk8 -inform PEM -in pkcs1.pem -outform PEM -nocrypt -out pkcs8.pem # PKCS1转成PKCS8格式的私钥
 openssl pkcs8 -in pkcs8.pem -nocrypt -out pkcs1.pem # PKCS8转成PKCS1格式的私钥
 openssl rsa -in ssl.key -pubout -out rsa_public_key.pem # 根据私钥生成公钥
 openssl req -new -key ssl.key -out ssl.csr # 生成证书签名请求
