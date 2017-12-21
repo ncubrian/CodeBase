@@ -21,6 +21,9 @@ tar xvzf openresty-1.11.2.5.tar.gz openresty-1.11.2.5/bundle/nginx-1.11.2 -C ope
 cut -f2 -d' ' # 取出空格分隔的第二个string
 go test -v -run TestLongLoop -timeout 30m # 指定go test执行时间最大为30分钟
 
+export https_proxy=http://localhost:port
+export https_proxy=http://localhost:port # Mac终端当前会话使用代理
+
 ntpdate pool.ntp.org # ubuntu手动时间同步
 date +%s.%N # seconds.nanoseconds since 1970-01-01 00:00:00 UTC e.g. 1490666011.288909555
 at -f foobar.sh 06:05 # 在06:05执行foobar.sh
