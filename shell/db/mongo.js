@@ -80,6 +80,16 @@ arrId.forEach(function(oid) {
     		})
 })
 
+var arrTest=["foobar", "helloworld"]
+for (i=0; i<arrTest.length; i++)
+{
+    x=arrTest[i]
+    db['test'].find({"time":{$gt:"yyyy-mm-dd hh:mm:ss"},"name":x}).sort({time:1}).forEach(
+    function (doc) {
+	print('id: ' + doc.id + ', name: ' + doc.name);
+    })
+}
+
 db.test.find({foobar:{$ne:null}, $where:"this.foobar.length > 10 "}) // 查出长度大于10的文档
 db.posts.find({post_text:{$regex:"runoob"}})
 db.posts.find({post_text:/runoob/})
