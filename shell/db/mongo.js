@@ -90,6 +90,14 @@ for (i=0; i<arrTest.length; i++)
     })
 }
 
+var arr=[]
+for (i=0; i<arr.length; i++)
+{
+    foobar=arr[i]
+    print('update ' + foobar)
+    db['test'].update({foobar:foobar},{$set:{fool:NumberInt(0)}},{multi:true})
+}
+
 db.test.find({foobar:{$ne:null}, $where:"this.foobar.length > 10 "}) // 查出长度大于10的文档
 db.posts.find({post_text:{$regex:"runoob"}})
 db.posts.find({post_text:/runoob/})
