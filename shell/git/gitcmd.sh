@@ -21,6 +21,7 @@ git checkout -b newBrach origin/master
 
 git branch -vv
 git branch --set-upstream-to=origin/foobar # 修改当前分支追踪的远程仓库为origin仓库的foobar分支
+git branch -m old_local_branch_name new_local_branch_name # 修改本地分支名
 
 git push origin :refs/tags/v0.9 #删除指定tag
 git branch -d xxx #删除本地xxx分支
