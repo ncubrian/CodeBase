@@ -11,6 +11,8 @@ git remote add foo git@github.com:Foo/bar.git
 
 git pull foo develop
 git push origin develop
+git push origin --all # 把本地所有分支push到远程仓库，一一对应
+git pull --all # 把远程仓库所有分支拉到本地，一一对应
 
 git commit --amend
 git push -f origin dev
