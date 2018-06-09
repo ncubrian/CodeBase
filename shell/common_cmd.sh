@@ -58,6 +58,7 @@ hostname -F /etc/hostname #修改hostname命令显示的内容
 pwdx # report current working directory of a process
 alias ll="ls -l"
 sed -i 's/enabled=[0,1]/enabled=1/g' /etc/yum.repos.d/CentOS-Debuginfo.repo
+sed -n '100,200p' filename # 查看文件的第100行到第200行
 cat /etc/passwd|head -n 5|cut -d : -f 1
 sed -n '/START./,/STOPPING THREADS/p' t50And500thread.txt | cut -f 1 -d '('
 sed -n '/START./,/STOPPING THREADS/p' t50And500thread.txt | cut -d '(' -f -2 | sed 's/\(\,.*\,\)/\,/g'
