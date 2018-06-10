@@ -14,3 +14,6 @@ openssl x509 -outform PEM -in ssl.crt -pubkey -out ssl.pubkey # 从证书中提�
 
 openssl enc -aes-128-ecb -e -K 11111111111111111111111111111111 -nosalt -in plain -out cipher # aes encryption
 openssl enc -aes-128-ecb -d -K 11111111111111111111111111111111 -nosalt -in cipher -out plain.out # aes decryption
+
+echo 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' | openssl base64 -A # 直接用base64命令不需要加-A
+echo 'YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWEK' | openssl base64 -d -A
