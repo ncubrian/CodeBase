@@ -30,6 +30,9 @@ git branch -d xxx #删除本地xxx分支
 
 git reset --hard commit-hash # 回滚到之前某一commit
 
+git describe --contains --all HEAD|tr -s '\n'
+git rev-parse --abbrev-ref HEAD # 获取当前分支
+
 使用Git比较本地分支版本和远程版本的不同之处
 假定远端库名为 origin, 你要比较的本地分支为 foo, 远端分支为 xxx
 
