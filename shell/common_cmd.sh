@@ -14,10 +14,18 @@ nohup command > myout.file 2>&1 &
 program &> file
 lsof -i tcp:8580 # 查看端口被哪个进程占用
 lsof -p 507 # 查看某进程使用的端口
+
+# tar & zip
 tar -ztvf file.tar.gz
 tar -zcv --exclude='foo/bar/logs' -f foobar.tar.gz foobar
 tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 tar xvzf openresty-1.11.2.5.tar.gz openresty-1.11.2.5/bundle/nginx-1.11.2 -C openresty-1.11.2.5/bundle/
+
+zip -re filename.zip filename # 回车，输入2次密码
+zip -rP passwork filename.zip filename # passwork是要输入的密码
+unzip filename.zip # 按提示输入密码
+unzip -P passwork filename.zip # passwork是要解压的密码，这个不会有提示输入密码的操作
+
 cut -f2 -d' ' # 取出空格分隔的第二个string
 go test -v -run TestLongLoop -timeout 30m # 指定go test执行时间最大为30分钟
 
