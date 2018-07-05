@@ -167,3 +167,4 @@ java -jar xxx.jar
 # 但是有时，我们希望运行里面的具体某个类，这时可以通过：
 java -cp xxx.jar xxx.com.xxxx
 # 其中-cp命令是将xxx.jar加入到classpath，这样java class loader就会在这里面查找匹配的类。
+java -Djava.ext.dirs=test test.Foobar # 把依赖的jar包和Foobar.class放到test目录中
