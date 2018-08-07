@@ -1,7 +1,9 @@
-openssl genrsa -out ssl.key 2048 # 生成私钥
-openssl pkcs8 -topk8 -inform PEM -in pkcs1.pem -outform PEM -nocrypt -out pkcs8.pem # PKCS1转成PKCS8格式的私钥
-openssl pkcs8 -in pkcs8.pem -nocrypt -out pkcs1.pem # PKCS8转成PKCS1格式的私钥
-openssl rsa -in ssl.key -pubout -out rsa_public_key.pem # 根据私钥生成公钥
+openssl genrsa -out ssl.key 2048 # 生成私钥 -----BEGIN RSA PRIVATE KEY-----
+openssl pkcs8 -topk8 -inform PEM -in pkcs1.pem -outform PEM -nocrypt -out pkcs8.pem # PKCS1转成PKCS8格式的私钥 -----BEGIN PRIVATE KEY-----
+openssl pkcs8 -in pkcs8.pem -nocrypt -out pkcs1.pem # PKCS8转成PKCS1格式的私钥 -----BEGIN RSA PRIVATE KEY-----
+openssl rsa -in ssl.key -pubout -out rsa_public_key.pem # 根据私钥生成公钥 -----BEGIN PUBLIC KEY-----
+openssl rsa -in ssl.key -RSAPublicKey_out -out rsa_public_key.pem # Mac上没有 -----BEGIN RSA PUBLIC KEY-----
+ssh-keygen -e -m pem -f ssl.key > rsa_public_key.pem # Mac上有 -----BEGIN RSA PUBLIC KEY-----
 openssl req -new -key ssl.key -out ssl.csr # 生成证书签名请求
 openssl x509 -req -in ssl.csr -signkey ssl.key -out ssl.crt # 自签名私有证书
 
