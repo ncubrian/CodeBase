@@ -14,6 +14,9 @@ db.serverBuildInfo();
 db.serverStatus();
 use admin;
 db.createUser({user:"admin",pwd:"admin",roles:["root"]})
+db.system.users.find().pretty()
+db.createUser({user:"foobar", pwd:"foobar", roles:[{role: "readWrite", db: "foobar"}]})
+db.system.users.remove({user:"foobar"})
 db.shutdownServer();
 
 db.foobar.update({fooId:'122333444455555'},{$set:{"fooDetail" : {"fooName":{"abbaName":"ateens"}}}})
