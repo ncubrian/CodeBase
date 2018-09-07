@@ -1,4 +1,5 @@
 mongod --bind_ip 127.0.0.1 --port 27017 --logpath log/mongod.log --dbpath data/db --fork
+mongod -f mongod.conf
 
 mongod --port=37019 --fork --dbpath=/opt/mongodb/rs1-37019 --logpath=/opt/mongodb/rs1-37019/mongod.log --replSet=rs1 --oplogSize=512 --auth --keyFile=/mongodb/rs1.key
 
