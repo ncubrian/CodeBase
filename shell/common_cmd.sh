@@ -52,6 +52,7 @@ d3w        #删除到第三个单词的结尾位置
 d0         #删至行首
 d$         #删至行尾
 D          #删除到某一行的结尾
+:%s/localhost/127.0.0.1/g # localhost全部替换为127.0.0.1
 
 rpm -qi glibc #查看glibc库的信息
 yum -y update glibc
