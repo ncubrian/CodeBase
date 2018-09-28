@@ -8,6 +8,8 @@ ssh-keygen -e -m pem -f id_rsa.pub > id_rsa.pem # 从openssh公钥生成openssl�
 openssl req -new -key ssl.key -out ssl.csr # 生成证书签名请求
 openssl x509 -req -in ssl.csr -signkey ssl.key -out ssl.crt # 自签名私有证书
 
+openssl pkcs12 -in cacert.p12 -out mycerts.crt -nokeys -clcerts # pkcs12(pfx)转成crt
+
 openssl dgst -sha256 -sign privkey -out after before # sign before using sha256 with rsa
 openssl rsa -pubin -in pubkey.pem -text -modulus # 查看公钥信息
 openssl x509 -in certificate.pem -text -noout # 查看证书
