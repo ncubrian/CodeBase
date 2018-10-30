@@ -98,7 +98,7 @@ vi /etc/sysctl.conf
 
 # 查看某个进程的pid
 pgrep sigtest
-ps -ef |grep -i sigtest |grep -v "grep" |awk '{print $2}'
+ps -ef | grep -i sigtest | grep -v "grep" | awk '{print $2}' | xargs kill
 pstree -p 12306 # 查看进程12306的所有线程
 
 # 转PKCS8的命令
