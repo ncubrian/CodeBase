@@ -65,6 +65,7 @@ find /usr -name 'jni.h' -print #在指定目录查找文件
 getconf LONG_BIT
 hostname -F /etc/hostname #修改hostname命令显示的内容
 pwdx # report current working directory of a process
+echo -e '\033[01;31mfoobar\033[0m' # 显示红色foobar
 alias ll="ls -l"
 sed -i 's/enabled=[0,1]/enabled=1/g' /etc/yum.repos.d/CentOS-Debuginfo.repo
 sed -n '100,200p' filename # 查看文件的第100行到第200行
