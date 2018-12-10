@@ -32,7 +32,8 @@ go test -v -run TestLongLoop -timeout 30m # 指定go test执行时间最大为30
 export http_proxy=http://localhost:port
 export https_proxy=http://localhost:port # Mac终端当前会话使用代理
 
-ntpdate pool.ntp.org # ubuntu手动时间同步
+sudo ntpdate pool.ntp.org # ubuntu手动时间同步
+sudo ntpdate -u time.apple.com # Mac手动时间同步
 date +%s.%N # seconds.nanoseconds since 1970-01-01 00:00:00 UTC e.g. 1490666011.288909555
 at -f foobar.sh 06:05 # 在06:05执行foobar.sh
 
