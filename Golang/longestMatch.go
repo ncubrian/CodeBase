@@ -16,7 +16,7 @@ func isNextTo(prev, curr []*Position, longest *Position) *Position {
 		for _, q := range prev {
 			if (q.p + 1) == p.p {
 				p.consecutive = q.consecutive + 1
-				if longest == nil || p.consecutive > longest.consecutive {
+				if p.consecutive > longest.consecutive {
 					longest = p
 				}
 			}
@@ -44,15 +44,23 @@ func stringSimilarity(s1, s2 string) string {
 			r += 'a' - 'A'
 		}
 		if currPos, ok := m2[r]; ok {
-			if prevPos == nil {
+			if longest == nil { // 第一个s2和s1中都有的字符
+				longest = currPos[0]
+			}
+			if prevPos == nil { // 标识新开始的一段
 				prevPos = currPos
 			} else {
 				longest = isNextTo(prevPos, currPos, longest)
 				prevPos = currPos
 			}
+		} else {
+			prevPos = nil // s1中字符在s2中没有，则重新开始
 		}
 	}
 
+	if longest == nil {
+		return ""
+	}
 	return string(s2[longest.p - longest.consecutive : longest.p + 1])
 }
 
