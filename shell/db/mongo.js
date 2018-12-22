@@ -80,7 +80,7 @@ count_foobar()
 db['foobar'].find({"hello" : "world"}).forEach(
     function (doc) {
 	db['foobar'].update({"_id" : doc._id}, {$set : {Delta : doc.Sigma - doc.Epsilon}});
-	print(doc.Sigma - doc.Epsilon);
+	print("Delta: " + (doc.Sigma - doc.Epsilon).toString()); // doc.Sigma & doc.Epsilon 是ISODate类型
     }
 )
 
@@ -92,9 +92,9 @@ for(var a in arr) {
 var arrId = [ObjectId("ffx12")];
 arrId.forEach(function(oid) {
 	db['foo'].find({"_id":oid}).forEach(
-			function (doc) {
-        		print('bar: ' + doc.bar);
-    		})
+	    function (doc) {
+		print('bar: ' + doc.bar);
+	})
 })
 
 var arrTest=["foobar", "helloworld"]
