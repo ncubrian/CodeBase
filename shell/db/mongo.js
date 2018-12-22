@@ -71,6 +71,19 @@ db['foo'].find({bar:'foo'}).forEach(
     }
 )
 
+// 把查询结果输出到一个输出界面
+function count_foobar() {
+    print("count: " + db['foobar'].count({"hello" : "world"}));
+}
+count_foobar()
+
+db['foobar'].find({"hello" : "world"}).forEach(
+    function (doc) {
+	db['foobar'].update({"_id" : doc._id}, {$set : {Delta : doc.Sigma - doc.Epsilon}});
+	print(doc.Sigma - doc.Epsilon);
+    }
+)
+
 // a打印出来是arr的下标，但它是字符串类型
 for(var a in arr) {
     print(a);
