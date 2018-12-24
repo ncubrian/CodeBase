@@ -89,6 +89,19 @@ for(var a in arr) {
     print(a);
 }
 
+// 查找arr1(hello表中)中有但是arr2(foobar表中)中没有的元素
+db.hello.find().forEach(
+    function (doc) {
+        doc.arr.forEach(
+            function(item, index) {
+                if (db.foobar.count({arr: item}) == 0) {
+                    print(item)
+                }
+            }
+        )
+    }
+)
+
 var arrId = [ObjectId("ffx12")];
 arrId.forEach(function(oid) {
 	db['foo'].find({"_id":oid}).forEach(
