@@ -45,6 +45,7 @@ tcpdump -i eth0 -vvvs 1024 -l -A src host localhost dst port 8080 # 抓HTTP包
 sudo  setcap cap_net_bind_service=ep /opt/nginx/sbin/nginx
 sudo adduser nginx # 用useradd创建用户会导致/etc/passwd里面没有配置用户的shell
 hostname -b MONGO1 # 设置主机名
+nc -z host port # 检查网络是否连通
 
 # vi
 :%!xxd	   #查看HEX
