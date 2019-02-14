@@ -90,6 +90,12 @@ while read line; do grep "$line" foo; echo; done < bar > stat # 逐行把bar中�
 
 sort foobar | uniq -dc | sort -k 1nr # 按foobar第一列统计重复并降序排列
 
+#根据时间生成MongoDB的ObjectID
+printf "%x0000000000000000\n" `date -d "2016-08-31 05:14:00" +%s`
+
+#将MongoDB的_id中的16进制的时间戳转换成可读时间
+date -d @`printf "%d\n" 0x579b7d80` +%Y-%m-%d" "%H:%M:%S
+
 # curl发post请求
 curl -i -X POST -H "'Content-type':'application/x-www-form-urlencoded', 'charset':'utf-8', 'Accept': 'text/plain'" -d 'json_data={"a":"aaa","b":"bbb","data":[{"c":"ccc","d":"ddd","keywords":[{"e": "eee", "f":"fff", "g":"ggg"}]}]}' url
 curl --data-urlencode "foobar=foo bar" http://localhost:port
