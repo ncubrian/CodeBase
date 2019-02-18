@@ -98,7 +98,7 @@ date -d @`printf "%d\n" 0x579b7d80` +%Y-%m-%d" "%H:%M:%S
 
 # curl发post请求
 curl -i -X POST -H "'Content-type':'application/x-www-form-urlencoded', 'charset':'utf-8', 'Accept': 'text/plain'" -d 'json_data={"a":"aaa","b":"bbb","data":[{"c":"ccc","d":"ddd","keywords":[{"e": "eee", "f":"fff", "g":"ggg"}]}]}' url
-curl --data-urlencode "foobar=foo bar" http://localhost:port
+curl --data-urlencode "foobar=foo bar" http://localhost:port --user username:password
 curl --data "foo=foo&bar=bar" http://localhost:port
 curl -H 'Content-type:text/xml' -d'' https://foobar -k # post发送xml，忽略证书
 
