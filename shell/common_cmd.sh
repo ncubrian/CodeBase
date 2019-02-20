@@ -102,6 +102,9 @@ curl --data-urlencode "foobar=foo bar" http://localhost:port --user username:pas
 curl --data "foo=foo&bar=bar" http://localhost:port
 curl -H 'Content-type:text/xml' -d'' https://foobar -k # post发送xml，忽略证书
 
+# lftp
+lftp -c 'set ftp:charset utf-8; set file:charset utf-8; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ftp:ssl-allow true ; set ssl:verify-certificate no; open -u username,password -e "cd /; ls *; mget *.txt; quit" host:port'
+
 cat /proc/sys/net/ipv4/tcp_max_tw_buckets # ubuntu TIME_WAIT最大数量
 vi /etc/sysctl.conf
 
