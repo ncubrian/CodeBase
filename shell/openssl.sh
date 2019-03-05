@@ -4,7 +4,8 @@ openssl pkcs8 -in pkcs8.pem -nocrypt -out pkcs1.pem # 从PKCS8转成PKCS1格式�
 openssl rsa -in ssl.key -pubout -out rsa_public_key.pem # 从私钥生成公钥 -----BEGIN PUBLIC KEY-----
 openssl rsa -in ssl.key -RSAPublicKey_out -out rsa_public_key.pem # Mac上没有 -----BEGIN RSA PUBLIC KEY-----
 ssh-keygen -e -m pem -f ssl.key > rsa_public_key.pem # 从私钥生成公钥 Mac上有 -----BEGIN RSA PUBLIC KEY-----
-ssh-keygen -e -m pem -f id_rsa.pub > id_rsa.pem # 从openssh公钥生成openssl公钥
+ssh-keygen -e -m pem -f id_rsa.pub > id_rsa.pem # 从OpenSSH公钥生成OpenSSL公钥
+ssh-keygen -y -f [input-ssh-private-key-path] > [output-ssh-public-key-path] # 从OpenSSH私钥生成OpenSSH公钥
 openssl req -new -key ssl.key -out ssl.csr # 生成证书签名请求
 openssl x509 -req -in ssl.csr -signkey ssl.key -out ssl.crt # 自签名私有证书
 
