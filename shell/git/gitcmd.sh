@@ -4,6 +4,7 @@ git mergetool -t bc3 main.c
 
 git clone -o remotename git://...
 git branch --set-upstream-to=origin/dev
+git clone https://github.com/toml-lang/toml.git --branch master --single-branch toml # 仅拉取master分支到本地toml目录中
 
 git remote set-url origin git@github.com:foo/bar.git
 git remote add foo git@github.com:Foo/bar.git
