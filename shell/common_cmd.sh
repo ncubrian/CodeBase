@@ -17,7 +17,7 @@ lsof -p 507 # 查看某进程使用的端口
 
 # tar & zip
 tar -ztvf file.tar.gz
-tar -zcv --exclude='foo/bar/logs' -f foobar.tar.gz foobar
+tar --exclude='foo/bar/logs' --exclude='./upload/nohup.out' -zcv -f ~/foobar.tar.gz foobar
 tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 tar xvzf openresty-1.11.2.5.tar.gz openresty-1.11.2.5/bundle/nginx-1.11.2 -C openresty-1.11.2.5/bundle/
 
