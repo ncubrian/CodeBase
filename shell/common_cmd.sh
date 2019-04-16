@@ -14,6 +14,7 @@ nohup command > myout.file 2>&1 &
 program &> file
 lsof -i tcp:8580 # 查看端口被哪个进程占用
 lsof -p 507 # 查看某进程使用的端口
+TZ="Asia/Shanghai" date "+%Y%m%d%H%M%S" # /usr/share/zoneinfo/Asia/Shanghai
 
 # tar & zip
 tar -ztvf file.tar.gz
