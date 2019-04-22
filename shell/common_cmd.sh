@@ -39,6 +39,7 @@ sudo ntpdate -u time.apple.com # Mac手动时间同步
 date +%s.%N # seconds.nanoseconds since 1970-01-01 00:00:00 UTC e.g. 1490666011.288909555
 at -f foobar.sh 06:05 # 在06:05执行foobar.sh
 
+# S  (SYN),  F  (FIN), P (PUSH), R (RST), U (URG), W (ECN CWR), E (ECN-Echo) or '.' (ACK)
 tcpdump -i eth0 -vnn dst host 192.168.1.135 and dst port 12306 # 监听指定目的IP和端口
 tcpdump -i eth0 -vnnAtttt 'tcp[tcpflags] & (tcp-push) != 0 and dst host 127.0.0.1 and dst port 8080' # 监听发到本地8080端口的tcp push包
 tcpdump -i eth0 -vvvs 1024 -l -A src host localhost dst port 8080 # 抓HTTP包
