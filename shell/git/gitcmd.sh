@@ -32,6 +32,7 @@ git push origin :refs/tags/v0.9 #删除指定tag
 git branch -d xxx #删除本地xxx分支
 
 git reset --hard commit-hash # 回滚到之前某一commit
+git merge --abort # 取消merge操作
 
 git describe --contains --all HEAD|tr -s '\n'
 git rev-parse --abbrev-ref HEAD # 获取当前分支
