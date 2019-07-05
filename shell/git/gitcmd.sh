@@ -26,6 +26,7 @@ git branch -vv
 git branch --set-upstream-to=origin/foobar # 修改当前分支追踪的远程仓库为origin仓库的foobar分支
 git branch -m old_local_branch_name new_local_branch_name # 修改本地分支名
 git ls-remote -h https://github.com/ncubrian/foobar.git |awk '{print substr($2, 12)}' # 列出远程仓库所有分支
+git config --global core.quotepath false # 解决中文文件名称在git status命令输出中的显示问题
 
 git push --tags origin master # push tags
 git push origin :refs/tags/v0.9 #删除指定tag
