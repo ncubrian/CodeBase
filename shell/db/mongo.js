@@ -128,6 +128,28 @@ for (i=0; i<arr.length; i++)
     db['test'].update({foobar:foobar},{$set:{fool:NumberInt(0)}},{multi:true})
 }
 
+// 修改数组中字段名，比如将foobar数组中的resultMessage改为resultCode
+{
+    "foobar" : [
+        {
+            "resultMessage" : "ILLEGAL"
+        }
+    ]
+}
+
+db.world.find({"foobar.resultMessage" : {$exists:true}}).forEach(
+    function (doc) {
+      	for (i = 0; i<doc.foobar.length; i++) {
+      	    if (doc.foobar[i].resultMessage != null) {
+      	  	  resultCode = doc.foobar[i].resultMessage;
+      	  	  db.world.update({"_id" : doc._id, "foobar.resultMessage":resultCode, "foobar.resultMessage" : {$exists:true}}, {$set : {"foobar.$.resultCode":resultCode}});
+		  db.world.update({"_id" : doc._id, "foobar.resultCode" : resultCode, "foobar.resultMessage" : {$exists:true}}, {$unset : {"foobar.$.resultMessage":true}});
+      	    }
+      	}
+    }
+)
+
+
 db.test.find({foobar:{$ne:null}, $where:"this.foobar.length > 10 "}) // 查出长度大于10的文档
 db.posts.find({post_text:{$regex:"runoob"}})
 db.posts.find({post_text:/runoob/})
