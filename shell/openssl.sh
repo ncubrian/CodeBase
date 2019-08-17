@@ -18,6 +18,7 @@ openssl rsa -in mykey.key -text -noout # 查看key
 openssl req -noout -text -in my.csr # 查看证书签名请求
 openssl x509 -outform PEM -in ssl.crt -pubkey -out ssl.pubkey # 从证书中提取公钥
 
+openssl rand 16 -hex # 生成16字节，32个字符的随机数hex
 openssl enc -aes-128-ecb -e -K 11111111111111111111111111111111 -nosalt -in plain -out cipher # aes encryption
 openssl enc -aes-128-ecb -d -K 11111111111111111111111111111111 -nosalt -in cipher -out plain.out # aes decryption
 
