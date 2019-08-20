@@ -149,6 +149,11 @@ db.world.find({"foobar.resultMessage" : {$exists:true}}).forEach(
     }
 )
 
+// 查出foo+bar字段有重复的记录
+db.getCollection('foobar').aggregate([
+    { $group: { _id :{foo : "$foo", bar: "$bar"}, count: { $sum : 1 } } },
+    { $match: { count: { $gt : 1}}} ]
+)
 
 db.test.find({foobar:{$ne:null}, $where:"this.foobar.length > 10 "}) // 查出长度大于10的文档
 db.posts.find({post_text:{$regex:"runoob"}})
