@@ -116,6 +116,7 @@ vi /etc/sysctl.conf
 pgrep sigtest
 ps -ef | grep -i sigtest | grep -v "grep" | awk '{print $2}' | xargs kill
 pstree -p 12306 # 查看进程12306的所有线程
+service --status-all # ubuntu上查看所有服务
 
 # 转PKCS8的命令
 OpenSSL> pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt -out rsa_pr
