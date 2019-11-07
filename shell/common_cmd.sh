@@ -15,6 +15,7 @@ program &> file
 lsof -i tcp:8580 # 查看端口被哪个进程占用
 lsof -p 507 # 查看某进程使用的端口
 TZ="Asia/Shanghai" date "+%Y%m%d%H%M%S" # /usr/share/zoneinfo/Asia/Shanghai
+ln -sf /usr/share/zoneinfo/Asia/ShangHai /etc/localtime
 echo 'a,b,c,d' | awk -F',' '{print $3}' # display c
 
 # tar & zip
