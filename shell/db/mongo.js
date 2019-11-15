@@ -71,6 +71,16 @@ db['foo'].find({bar:'foo'}).forEach(
     }
 )
 
+// 找出每个表中_id最新的记录
+var names=db.getCollectionNames()
+for(i=0; i<names.length; i++) {
+	db.getCollection(names[i]).find().sort({_id:-1}).limit(1).forEach(
+		function (doc) {
+			print("{collection: '" + names[i] + "', latestID: '" + doc._id + "'},");
+	    }
+	)
+}
+
 // 把查询结果输出到一个输出界面
 function count_foobar() {
     print("count: " + db['foobar'].count({"hello" : "world"}));
