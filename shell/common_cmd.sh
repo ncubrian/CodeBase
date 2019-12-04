@@ -18,6 +18,10 @@ TZ="Asia/Shanghai" date "+%Y%m%d%H%M%S" # /usr/share/zoneinfo/Asia/Shanghai
 ln -sf /usr/share/zoneinfo/Asia/ShangHai /etc/localtime
 echo 'a,b,c,d' | awk -F',' '{print $3}' # display c
 
+# exclude hidden files
+rsync -a --exclude='.*' test voodoo # test后不带/，会把整个test目录copy到foobar目录下，不管foobar目录是否已存在
+rsync -a --exclude='.*' test/ voodoo # test后带/，会把test目录中所有目录和文件都copy到foobar目录下，不管foobar目录是否已存在
+
 # tar & zip
 tar -ztvf file.tar.gz
 tar --exclude='foo/bar/logs' --exclude='./upload/nohup.out' -zcv -f ~/foobar.tar.gz foobar
