@@ -15,6 +15,7 @@ db.serverBuildInfo();
 db.serverStatus();
 use admin;
 db.createUser({user:"admin",pwd:"admin",roles:["root"]})
+db.source_collection.find().forEach( function(doc) { db.dest_collection.insert(doc); } ); # alternative for copyTo
 db.system.users.find().pretty()
 db.createUser({user:"foobar", pwd:"foobar", roles:[{role: "readWrite", db: "foobar"}]})
 db.system.users.remove({user:"foobar"})
