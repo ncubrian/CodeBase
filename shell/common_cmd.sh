@@ -24,6 +24,7 @@ rsync -a --exclude='.*' test/ voodoo # test后带/，会把test目录中所有�
 
 # tar & zip
 tar -ztvf file.tar.gz
+tar xf file.tar.xz
 tar --exclude='foo/bar/logs' --exclude='./upload/nohup.out' -zcv -f ~/foobar.tar.gz foobar
 tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 tar xvzf openresty-1.11.2.5.tar.gz openresty-1.11.2.5/bundle/nginx-1.11.2 -C openresty-1.11.2.5/bundle/
@@ -90,6 +91,7 @@ sed -n 's/\(.*",\)\("foobar":"[0-9]*[0-9]"\)\(,".*\)/\2/p' # 输出一行中的"
 sed -i "/^`tail -n3 test.yml|head -n1`$/s/^/#/" test.yml # 在倒数第三行开头添加'#'
 sed -i "/^`tail -n1 test.yml|head -n1`$/s/^.//" test.yml # 删除倒数第一行开头的字符
 tr "\n" " " < foo.json | sed -e 's/ //g' # 去除json格式化
+yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm # install latest git source
 # 正则表达式中，[]不需要转义，{}需要转义
 
 find . -name "*.go" | xargs grep -n "Config"
