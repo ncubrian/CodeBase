@@ -1,4 +1,4 @@
-cd /dD:\hello\world # 直接进入D盘指定目录
+cd /d D:\hello\world # 直接进入D盘指定目录
 
 ```
 @echo off
