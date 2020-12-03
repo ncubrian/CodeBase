@@ -57,6 +57,7 @@ git config --global core.excludesfile '~/.gitignore' #使全局gitignore生效
 git config --global url."https://".insteadOf git://
 git push origin --delete foobar # 删除远程分支
 git push origin --delete tag foobar # 删除远程tag
+git log --author="author name" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -
 
 ----------------------------------------------------------------------------------------------------------
 # Git 全局设置
