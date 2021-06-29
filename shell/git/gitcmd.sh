@@ -3,6 +3,7 @@ git merge dev
 git mergetool -t bc3 main.c
 
 git clone -o remotename git://...
+git -c http.sslVerify=false clone https://example.com/path/to/git
 git branch --set-upstream-to=origin/dev
 git clone https://github.com/toml-lang/toml.git --branch master --single-branch toml # 仅拉取master分支到本地toml目录中
 
